@@ -7,16 +7,19 @@ public class EnemySpawn : MonoBehaviour
     public float time;
     public GameObject Goblin;
     CannonMovement Cannon;
+    ScoreManager scoreManager;
+   
     // Start is called before the first frame update
     void Start()
     {
         Cannon = GameObject.Find("Player").GetComponent<CannonMovement>();
+        scoreManager = GameObject.Find("Player").GetComponent<ScoreManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Cannon.istrue == false)
+        if (Cannon.istrue == false && scoreManager.isWon==false)
         {
             time = time + Time.deltaTime;
             float x = Random.Range(8.6f, 163.0f);

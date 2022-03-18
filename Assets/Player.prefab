@@ -205,6 +205,7 @@ GameObject:
   - component: {fileID: 8674574739765712452}
   - component: {fileID: 8679073089510388355}
   - component: {fileID: 9061215396162480813}
+  - component: {fileID: -4585491068472801807}
   - component: {fileID: 6863892533186662310}
   m_Layer: 0
   m_Name: Player
@@ -242,7 +243,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   bullet: {fileID: 0}
-  offset: 0
+  offset: {x: 0, y: 0, z: 0}
+  lives: 0
+  live: {fileID: 0}
+  gameOver: {fileID: 0}
+  istrue: 0
 --- !u!54 &9061215396162480813
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -259,6 +264,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-4585491068472801807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8680600834606669348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0084b8cc0ba316046bd5f174ed4a94cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  ScoreText: {fileID: 0}
 --- !u!136 &6863892533186662310
 CapsuleCollider:
   m_ObjectHideFlags: 0

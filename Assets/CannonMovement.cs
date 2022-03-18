@@ -15,19 +15,28 @@ public class CannonMovement : MonoBehaviour
     public Text gameOver;
     public bool istrue;
     Rigidbody rb;
+    ScoreManager scoreManager;
+
+    public int count;
+  
+
 
     void Start()
     {
         istrue = false;
         lives = 3;
         rb = GetComponent<Rigidbody>();
+        scoreManager = GetComponent<ScoreManager>();
+        
+        
+
     }
     
 
     // Update is called once per frame
     void Update()
     {
-        if (istrue == false)
+        if (istrue == false && scoreManager.isWon==false)
         {
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
@@ -43,13 +52,22 @@ public class CannonMovement : MonoBehaviour
                 Instantiate(bullet, transform.position + offset, Quaternion.identity);
 
             }
+
+
+          
+
+            
+            
+            
+
+
         }
        
 
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (istrue == false)
+        if (istrue == false && scoreManager.isWon==false)
         {
             if (collision.gameObject.tag == "Goblin")
             {
