@@ -53,30 +53,30 @@
     <UnityVersion>2020.3.26f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\EnemeyMovement.cs" />
-    <Compile Include="Assets\CannonMovement.cs" />
-    <Compile Include="Assets\BulletMovement.cs" />
+    <Compile Include="Assets\48 Particle Effect Pack\Script\csShowAllEffect.cs" />
+    <Compile Include="Assets\Scripts\EnemeyMovement.cs" />
+    <Compile Include="Assets\Scripts\CannonMovement.cs" />
+    <Compile Include="Assets\48 Particle Effect Pack\Script\csMouseOrbit.cs" />
+    <Compile Include="Assets\Scripts\ObjectPool.cs" />
+    <Compile Include="Assets\Scripts\BulletMovement.cs" />
     <Compile Include="Assets\SoftEffects\Scripts\CGHolder.cs" />
+    <Compile Include="Assets\Scripts\Constants.cs" />
     <Compile Include="Assets\SoftEffects\Scripts\GPUWorker.cs" />
+    <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\SoftEffects\Scripts\PrintData.cs" />
-    <Compile Include="Assets\ScoreManager.cs" />
+    <Compile Include="Assets\Scripts\PlayerAudioSource.cs" />
+    <Compile Include="Assets\48 Particle Effect Pack\Script\csParticleMove.cs" />
+    <Compile Include="Assets\Scripts\ScoreManager.cs" />
+    <Compile Include="Assets\48 Particle Effect Pack\Script\csDestroyEffect.cs" />
+    <Compile Include="Assets\48 Particle Effect Pack\Script\csParticleEffectPackLightControl.cs" />
     <Compile Include="Assets\SoftEffects\Scripts\SoftEffects.cs" />
     <Compile Include="Assets\SoftEffects\Scripts\Styles.cs" />
     <Compile Include="Assets\SoftEffects\Scripts\ClassExtensions.cs" />
+    <Compile Include="Assets\Scripts\PoolManager.cs" />
+    <Compile Include="Assets\Scripts\SpawnSAstroid.cs" />
     <Compile Include="Assets\SoftEffects\Scripts\SoftEffectsFont.cs" />
-    <Compile Include="Assets\EnemySpawn.cs" />
-    <Compile Include="Assets\Onclicks.cs" />
-    <Compile Include="Assets\PlayerAudioSource.cs" />
-    <Compile Include="Assets\48 Particle Effect Pack\Script\csParticleEffectPackLightControl.cs" />
-    <Compile Include="Assets\48 Particle Effect Pack\Script\csShowAllEffect.cs" />
-    <Compile Include="Assets\48 Particle Effect Pack\Script\csDestroyEffect.cs" />
-    <Compile Include="Assets\48 Particle Effect Pack\Script\csMouseOrbit.cs" />
-    <Compile Include="Assets\48 Particle Effect Pack\Script\csParticleMove.cs" />
-    <Compile Include="Assets\ManagerScripts\ObjectPool.cs" />
-    <Compile Include="Assets\ManagerScripts\PoolManager.cs" />
-    <Compile Include="Assets\ManagerScripts\SpawnSAstroid.cs" />
-    <Compile Include="Assets\ManagerScripts\Constants.cs" />
-    <Compile Include="Assets\ManagerScripts\Bullet.cs" />
+    <Compile Include="Assets\Scripts\Onclicks.cs" />
+    <Compile Include="Assets\Scripts\EnemySpawn.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TowerDefence_Vsquad\INFO\Info.txt" />
@@ -667,6 +667,9 @@
     <Reference Include="Unity.TextMeshPro">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.DeviceSimulator.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.DeviceSimulator.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
@@ -678,9 +681,6 @@
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.DeviceSimulator.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.DeviceSimulator.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
