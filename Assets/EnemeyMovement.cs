@@ -9,7 +9,10 @@ public class EnemeyMovement : MonoBehaviour
     CannonMovement Cannon;
     ScoreManager scoreManager;
     Rigidbody rb;
-    public float goblincount;
+    public float time ;
+    public float time1;
+
+   
 
 
     // Start is called before the first frame update
@@ -18,6 +21,7 @@ public class EnemeyMovement : MonoBehaviour
         Cannon = GameObject.Find("Player").GetComponent<CannonMovement>();
         scoreManager = GameObject.Find("Player").GetComponent<ScoreManager>();
         rb = GetComponent<Rigidbody>();
+        time1 = 2.0f;
     }
 
     // Update is called once per frame
@@ -25,13 +29,21 @@ public class EnemeyMovement : MonoBehaviour
     {
         if (Cannon.istrue == false && scoreManager.isWon==false)
         {
-            transform.Translate(0, 0, speed);
-
-            if(transform.position.z>=-71)
+          //  time = time + Time.deltaTime;
+         
+         
+           if(time>=time1)
             {
-                goblincount = goblincount + 1;
-                
+
+                transform.Translate(speed, 0, 0);
+                time1 += 2f;
             }
+            
+                transform.Translate(0, 0, speed);
+              
+            
+
+
         }
         if(Cannon.istrue==true)
         {

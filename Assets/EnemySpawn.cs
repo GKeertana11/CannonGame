@@ -22,8 +22,8 @@ public class EnemySpawn : MonoBehaviour
         if (Cannon.istrue == false && scoreManager.isWon==false)
         {
             time = time + Time.deltaTime;
-            float x = Random.Range(8.6f, 163.0f);
-            float z = Random.Range(-170.0f, -150.0f);
+            float x = Random.Range(398f, -398f);
+            float z = Random.Range(-693f, 75f);
             time = time + Time.deltaTime;
 
 

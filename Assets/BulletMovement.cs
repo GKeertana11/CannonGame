@@ -5,8 +5,21 @@ using UnityEngine.UI;
 
 public class BulletMovement : MonoBehaviour
 {
+
+    #region PUBLIC VARIABLES
+    // The bullet's speed in Unity units.
     public float speed;
     Rigidbody rb;
+    public Transform target;
+    public GameObject particle;
+    public GameObject goblin;
+    #endregion
+
+    #region PRIVATE VARIABLES
+    private Camera mainCamera;
+    #endregion
+   // public float speed;
+   // Rigidbody rb;
     CannonMovement Cannon;
     public GameObject Player;
     ScoreManager scoreManager;
@@ -25,7 +38,13 @@ public class BulletMovement : MonoBehaviour
     {
         if (Cannon.istrue == false && scoreManager.isWon==false)
         {
-            rb.velocity = new Vector3(0, 0, transform.position.z * speed * Time.deltaTime);
+            Vector3 newPosition = transform.position -transform.forward; //need to change again.
+          
+            transform.position = newPosition;
+            rb.velocity = Vector3.back * speed * Time.deltaTime;
+
+            
+           // rb.AddForce(Vector3.back * speed * Time.deltaTime);
         }
        
     }
@@ -35,11 +54,27 @@ public class BulletMovement : MonoBehaviour
         {
             if (collision.gameObject.tag == "Goblin")
             {
-                Destroy(collision.gameObject);
+                particle = Instantiate(particle, collision.gameObject.transform.position+new Vector3(0f,6f,0f), Quaternion.identity);
+                // Destroy(collision.gameObject);
+                 PoolManager.Instance.Recycle(Constants.ENEMY_PREFAB_NAME,collision.gameObject);
+                PoolManager.Instance.Recycle(Constants.BULLET_PREFAB_NAME, this.gameObject);
+                Destroy(particle, 2f);
                 scoreManager.Score(10);
+
                 
             }
         }
+
+    }
+    public void SetPosition(Vector3 position)
+    {
+        transform.position = position;
+    }
+
+    // Set the tragectory of the bullet.
+    public void SetTrajectory(Vector3 target)
+    {
+        transform.LookAt(target, Vector3.back);
 
     }
 }
